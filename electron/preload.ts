@@ -24,5 +24,6 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
 
 //Custom minimize button
 contextBridge.exposeInMainWorld("electronAPI", {
-  minimize: () => ipcRenderer.send("minimize-window")
+  minimize: () => ipcRenderer.send("minimize-window"),
+  close: () => ipcRenderer.send("close-window")
 })

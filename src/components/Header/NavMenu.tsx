@@ -8,6 +8,10 @@ export function NavMenu() {
     window.electronAPI.minimize();
   }
 
+  const handleClose = () => {
+    window.electronAPI.close();
+  }
+
   return (
     <nav className="flex w-fit h-fit border border-white py-1.5 px-2 gap-2 rounded-md"> 
       <button 
@@ -19,7 +23,10 @@ export function NavMenu() {
       <button className="flex p-1 border  border-white rounded-sm cursor-pointer">
         <img className="w-4 h-4" src={InfoIcon} alt="Info Window" />
       </button>
-      <button className="flex p-1 border border-white rounded-sm cursor-pointer">
+      <button 
+        className="flex p-1 border border-white rounded-sm cursor-pointer"
+        onClick={handleClose}  
+      >
         <img className="w-4 h-4" src={CloseIcon} alt="Close Window" />
       </button>
     </nav>

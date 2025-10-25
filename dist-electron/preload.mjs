@@ -20,5 +20,6 @@ electron.contextBridge.exposeInMainWorld("ipcRenderer", {
   // You can expose other APTs you need here. 
 });
 electron.contextBridge.exposeInMainWorld("electronAPI", {
-  minimize: () => electron.ipcRenderer.send("minimize-window")
+  minimize: () => electron.ipcRenderer.send("minimize-window"),
+  close: () => electron.ipcRenderer.send("close-window")
 });

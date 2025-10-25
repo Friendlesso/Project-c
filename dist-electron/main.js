@@ -33,6 +33,9 @@ function createWindow() {
 ipcMain.on("minimize-window", () => {
   win == null ? void 0 : win.minimize();
 });
+ipcMain.on("close-window", () => {
+  win == null ? void 0 : win.close();
+});
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
