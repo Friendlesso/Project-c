@@ -19,6 +19,10 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
     return ipcRenderer.invoke(channel, ...omit)
   },
 
-  // You can expose other APTs you need here.
-  // ...
+  // You can expose other APTs you need here. 
+})
+
+//Custom minimize button
+contextBridge.exposeInMainWorld("electronAPI", {
+  minimize: () => ipcRenderer.send("minimize-window")
 })

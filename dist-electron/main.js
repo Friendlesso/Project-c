@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { ipcMain, app, BrowserWindow } from "electron";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -30,6 +30,9 @@ function createWindow() {
     win.loadFile(path.join(RENDERER_DIST, "index.html"));
   }
 }
+ipcMain.on("minimize-window", () => {
+  win == null ? void 0 : win.minimize();
+});
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
