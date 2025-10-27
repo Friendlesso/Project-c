@@ -7,7 +7,7 @@ interface FakeVisualizerProps{
 }
 
 export const FakeVisualizer : React.FC<FakeVisualizerProps> = ({
-  barCount = 14,
+  barCount = 17,
   maxHeight = 40,
   speed = 75
   }) => {

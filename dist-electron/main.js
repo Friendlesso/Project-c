@@ -13,7 +13,7 @@ let win;
 function createWindow() {
   win = new BrowserWindow({
     icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
-    width: 600,
+    width: 700,
     height: 770,
     minimizable: true,
     maximizable: false,
