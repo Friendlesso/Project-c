@@ -3,6 +3,7 @@ import './App.css'
 import { Header } from './components/Header/Header'
 import { Todo } from "./components/Todo"
 import { Terminal } from "./components/Terminal/Terminal"
+import { Catagotchi } from "./components/Catagotchi/Catagotchi"
 
 function App() {
 
@@ -10,9 +11,10 @@ function App() {
     <>
       <div className="flex flex-col ">
         <Header />
-        <section className="flex justify-end">
+        <main className="flex justify-between items-center gap-2">
+          <Catagotchi />
           <Todo />
-        </section>
+        </main>
         <Terminal />
       </div>
     </>
