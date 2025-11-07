@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { PetButton } from "./PetButton"
 import { CountdownTimer } from "./CountdownTimer"
+import dayjs from "dayjs"
 
 export function Todo() {
 
@@ -8,27 +9,26 @@ export function Todo() {
   const [num, setNums] = useState<number | null>(null)
   // Handle the starting of pet timer
   const [cooldown, setCooldown] = useState(false)
-
-
+  
   useEffect(() => {
+    const today = dayjs().format("YYYY-MM-DD");
+    const savedDate = localStorage.getItem("lastDate");
 
-    const savedNums = localStorage.getItem("nums")
-
-    if (savedNums) {
-      setNums(Number(savedNums));
+    if(savedDate !== today) {
+      const newRandom = Math.floor(Math.random() * 5) + 1;
+      setNums(newRandom);
+      setPets(0);
+      localStorage.setItem("nums", newRandom.toString())
+      localStorage.setItem("pets", "0")
+      localStorage.setItem("lastDate", today);
     } else {
-      const NewRandom = Math.floor(Math.random() * 5) + 1;
-      localStorage.setItem("nums", NewRandom.toString())
-      setNums(NewRandom);
+      const savedNums = localStorage.getItem("nums");
+      const savedPets = localStorage.getItem("pets");
+      if(savedNums) setNums(Number(savedNums));
+      if(savedPets) setPets(Number(savedPets));
+
     }
   }, [])
-
-  useEffect(() => {
-    const savedPets = localStorage.getItem("pets")
-
-    setPets(savedPets !== null ? Number(savedPets) : 0)
-  }, [])
-
 
   return (
     <aside className="flex flex-col justify-between border border-white rounded-sm relative w-2/5 h-[65vh] mt-5">

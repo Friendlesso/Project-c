@@ -15,12 +15,16 @@ export function PetButton({pets, setPets, num, setNums, setCooldown, cooldown  }
     localStorage.setItem("nums", newRandom.toString());
     setNums(newRandom);
     setPets(0);
+    localStorage.setItem("pets", "0")
   }
 
   const handlePets = () => {
     if (num !== null && pets < num) {
-      setPets(prev => prev + 1);
-      localStorage.setItem("pets", pets.toString())
+      setPets(prev => {
+        const newPets = prev + 1;
+        localStorage.setItem("pets", newPets.toString());
+        return newPets
+      })
     }
   }
 
