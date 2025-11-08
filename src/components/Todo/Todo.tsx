@@ -9,7 +9,7 @@ export function Todo() {
   const [num, setNums] = useState<number | null>(null)
   // Handle the starting of pet timer
   const [cooldown, setCooldown] = useState(false)
-  
+
   useEffect(() => {
     const today = dayjs().format("YYYY-MM-DD");
     const savedDate = localStorage.getItem("lastDate");
@@ -26,7 +26,6 @@ export function Todo() {
       const savedPets = localStorage.getItem("pets");
       if(savedNums) setNums(Number(savedNums));
       if(savedPets) setPets(Number(savedPets));
-
     }
   }, [])
 

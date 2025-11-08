@@ -2,7 +2,11 @@ import CloseIcon from "../../assets/icons/Close.svg"
 import InfoIcon from "../../assets/icons/Info.svg"
 import MinimizeIcon from "../../assets/icons/Minimize.svg"
 
-export function NavMenu() {
+ type NavMenuProps = {
+  setShowInfo: React.Dispatch<React.SetStateAction<boolean>>
+ }
+
+export function NavMenu({setShowInfo}:NavMenuProps) {
 
   const handleMinimize = () => {
     window.electronAPI.minimize();
@@ -20,7 +24,12 @@ export function NavMenu() {
       >
         <img className="w-4 h-4" src={MinimizeIcon} alt="Minimize Window" />
       </button>
-      <button className="flex p-1 border  border-white rounded-sm cursor-pointer">
+      <button 
+        className="flex p-1 border  border-white rounded-sm cursor-pointer"
+        onClick={() => {
+          setShowInfo(true)
+        }}
+        >
         <img className="w-4 h-4" src={InfoIcon} alt="Info Window" />
       </button>
       <button 
