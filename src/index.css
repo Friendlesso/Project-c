@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Rostex";
+  src: url('./assets/fonts/Rostex-Outline.ttf');
+}
+
 
 body {
   background-color: #000000;

@@ -22,9 +22,7 @@ function App() {
         </main>
         <Terminal />
       </div>
-      {showInfo &&
-        <Information setShowInfo={setShowInfo} />
-      }
+        <Information showInfo={showInfo} setShowInfo={setShowInfo} />
     </>
   )
 }

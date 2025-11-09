@@ -1,10 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
+import InfoIcon from "../../assets/icons/INFO_Title.svg"
+import CloseInfo from "../../assets/icons/CloseInfo.svg"
 
 type InformationProps = {
-  setShowInfo: React.Dispatch<React.SetStateAction<boolean>>
+  showInfo: boolean;
+  setShowInfo: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function Information({ setShowInfo }: InformationProps) {
+export function Information({ showInfo, setShowInfo }: InformationProps) {
+
+  const [nextAnimation, setNextAnimation] = useState<boolean>(false)
+
+  const handleClosing = () => {
+    setTimeout(() => {
+      setShowInfo(false);
+    }, 300)
+    setNextAnimation(false);
+  }
 
   const faqList = [
     {
@@ -20,29 +32,47 @@ export function Information({ setShowInfo }: InformationProps) {
   ]
 
   return (
-    <section className="w-[75%] h-[90%] bg-black border-4 border-white rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6">
-      <header className="flex justify-between">
-        <h3 className="text-xl">Info</h3>
-        <button
-          onClick={() => {
-            setShowInfo(false)
-          }}
-        >X</button>
-      </header>
-      <h4 className="text-lg">How to care for my Catagotchi?</h4>
-      <div>
-        <ul>
-          {faqList.map((faq, index) => (
-            <li key={index} className="flex flex-col items-start gap-2">
-              <div className="flex gap-2">
-                <p>{index + 1}.</p>
-                <p>{faq.question}</p>
-              </div>
-              <p>-{faq.anwser}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <div className={`absolute top-0 left-0 w-full h-full flex
+      transform transition-transform duration-300 ease-in-out
+      ${showInfo ? "translate-y-0" : "-translate-y-full"}
+    `}
+      onTransitionEnd={() => {
+        if (showInfo && !nextAnimation) {
+          setNextAnimation(true)
+        }
+      }}>
+      <aside
+        className={`
+          bg-white 
+          w-1/4 h-full 
+          shadow-xl 
+          p-5 
+          z-20
+          border-0
+          rounded-bl-md`}
+      >
+        <div className="flex flex-col justify-between items-center h-full">
+          <button className="flex" onClick={() => {
+            handleClosing()
+          }}>
+            <img className="h-1/2" src={CloseInfo} alt="" />
+          </button>
+          <img className="h-1/4" src={InfoIcon} alt="" />
+        </div>
+      </aside>
+      <section
+        className={`
+          absolute top-0 left-1/4
+          w-3/4 h-full
+          bg-white opacity-85
+          text-black
+          z-10
+          transition-transform duration-300 ease-in-out
+          ${nextAnimation ? "translate-x-0" : "-translate-x-full"}
+        `}
+      >
+        <p className="bg-white text-black">Hello</p>
+      </section>
+    </div>
   )
 }
