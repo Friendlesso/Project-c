@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import InfoIcon from "../../assets/icons/INFO_Title.svg"
 import CloseInfo from "../../assets/icons/Info_Close.svg"
+
 import HoverCloseInfo from "../../assets/icons/Info_Close_Hover.svg"
 
 

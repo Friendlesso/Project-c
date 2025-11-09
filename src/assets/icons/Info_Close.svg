@@ -1,3 +1,9 @@
-<svg width="110" height="83" viewBox="0 0 110 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M55.0078 1C56.4919 1 57.9018 1.6287 58.707 2.79199V2.79297L108.207 74.292C108.67 74.9678 108.941 75.7573 108.989 76.5752C109.038 77.3941 108.862 78.211 108.48 78.9375C108.099 79.6639 107.527 80.2727 106.826 80.6982C106.125 81.1239 105.32 81.35 104.5 81.3525H5.50195C4.68058 81.3538 3.874 81.1307 3.1709 80.7061C2.46786 80.2815 1.89487 79.6718 1.51367 78.9443C1.13247 78.2167 0.95764 77.398 1.00879 76.5781C1.06 75.7584 1.3351 74.9684 1.80371 74.2939L1.80469 74.293L51.3037 2.79199C52.1119 1.62809 53.5241 1.00005 55.0078 1ZM54.1807 14.4473L15.1748 70.7832L14.0889 72.3525H95.918L94.8311 70.7832L55.8252 14.4473L55.0029 13.2598L54.1807 14.4473Z" fill="black" stroke="black" stroke-width="2"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 110 83" style="enable-background:new 0 0 110 83;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<polygon class="st0" points="55,2 107.7,78 2.3,78 "/>
 </svg>
