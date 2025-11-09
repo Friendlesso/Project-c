@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Rostex";
-  src: url('./assets/fonts/Rostex-Outline.ttf');
+  font-family: "Montserrat";
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
 }
 
 
 body {
   background-color: #000000;
   color: white;
+}
+
+button {
+  -webkit-app-region: no-drag
 }
 
